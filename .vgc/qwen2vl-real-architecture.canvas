@@ -290,8 +290,8 @@
     {
       "id": "image_utils",
       "type": "text",
-      "x": -222,
-      "y": 320,
+      "x": -10,
+      "y": 464,
       "width": 220,
       "height": 100,
       "color": "5",
