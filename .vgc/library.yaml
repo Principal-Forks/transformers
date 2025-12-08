@@ -147,50 +147,60 @@ nodeComponents:
 edgeComponents:
   uses:
     style: "solid"
+    color: "4"
     label: "uses"
     description: "Direct usage dependency"
 
   configures:
     style: "dashed"
+    color: "3"
     label: "configures"
     description: "Configuration relationship"
 
   loads:
     style: "dotted"
+    color: "5"
     label: "loads"
     description: "Data loading relationship"
 
   trains:
     style: "animated"
+    color: "6"
     label: "trains"
     description: "Training relationship"
 
   processes:
     style: "solid"
+    color: "5"
     label: "processes"
     description: "Data processing flow"
 
   extends:
     style: "dashed"
+    color: "1"
     label: "extends"
     description: "Inheritance relationship"
 
   transforms:
     style: "solid"
+    color: "5"
     label: "transforms"
     description: "Data transformation"
 
   encodes:
     style: "solid"
+    color: "5"
     label: "encodes"
     description: "Encoding operation"
 
   projects:
     style: "solid"
+    color: "6"
     label: "projects"
     description: "Projection operation"
 
   generates:
     style: "solid"
+    color: "5"
     label: "generates"
     description: "Generation operation"
