@@ -1,0 +1,384 @@
+{
+  "vv": {
+    "name": "Qwen2-VL Real Architecture (Code-Derived)",
+    "version": "1.0.0",
+    "nodeTypes": {
+      "component": {
+        "shapes": ["rounded"]
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "user_input",
+      "type": "text",
+      "x": 500,
+      "y": 50,
+      "width": 300,
+      "height": 60,
+      "color": "2",
+      "text": "User Input (images/videos + text)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "API"
+      }
+    },
+    {
+      "id": "processor",
+      "type": "text",
+      "x": 500,
+      "y": 160,
+      "width": 300,
+      "height": 90,
+      "color": "5",
+      "text": "Qwen2VLProcessor\nprocessing_qwen2_vl.py:48\nInherits: ProcessorMixin",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Processor"
+      }
+    },
+    {
+      "id": "image_processor",
+      "type": "text",
+      "x": 100,
+      "y": 320,
+      "width": 280,
+      "height": 100,
+      "color": "5",
+      "text": "Qwen2VLImageProcessor\nimage_processing_qwen2_vl.py:105\nInherits: BaseImageProcessor\n• smart_resize()\n• resize, rescale, normalize",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageProcessor"
+      }
+    },
+    {
+      "id": "tokenizer",
+      "type": "text",
+      "x": 920,
+      "y": 320,
+      "width": 250,
+      "height": 100,
+      "color": "5",
+      "text": "Qwen2TokenizerFast\n(external)\n• Tokenizes text\n• Handles special tokens",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Tokenizer"
+      }
+    },
+    {
+      "id": "video_processor",
+      "type": "text",
+      "x": 420,
+      "y": 320,
+      "width": 260,
+      "height": 100,
+      "color": "5",
+      "text": "Qwen2VLVideoProcessor\nvideo_processing_qwen2_vl.py\n• Frame extraction\n• Temporal processing",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "VideoProcessor"
+      }
+    },
+    {
+      "id": "config",
+      "type": "text",
+      "x": -200,
+      "y": 600,
+      "width": 250,
+      "height": 120,
+      "color": "3",
+      "text": "Qwen2VLConfig\nconfiguration_qwen2_vl.py:239\n• vision_config\n• text_config\n• token IDs",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Config"
+      }
+    },
+    {
+      "id": "for_conditional_gen",
+      "type": "text",
+      "x": 450,
+      "y": 500,
+      "width": 400,
+      "height": 120,
+      "color": "4",
+      "text": "Qwen2VLForConditionalGeneration\nmodeling_qwen2_vl.py:1263\nInherits: Qwen2VLPreTrainedModel, GenerationMixin\n• forward() - main entry point\n• lm_head - output projection",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "qwen2vl_model",
+      "type": "text",
+      "x": 450,
+      "y": 680,
+      "width": 400,
+      "height": 120,
+      "color": "4",
+      "text": "Qwen2VLModel\nmodeling_qwen2_vl.py:925\n• self.visual (vision encoder)\n• self.language_model (text decoder)\n• get_rope_index() - 3D position encoding",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "vision_transformer",
+      "type": "text",
+      "x": 100,
+      "y": 880,
+      "width": 300,
+      "height": 180,
+      "color": "4",
+      "text": "Qwen2VisionTransformer\nmodeling_qwen2_vl.py:669\nInherits: Qwen2VLPreTrainedModel\n\n• PatchEmbed:257 - patch tokenization\n• VisionRotaryEmbedding:243\n• Qwen2VLVisionBlock:432 (×32)\n  - VisionAttention:349\n  - VisionMlp:299\n• PatchMerger:283 - spatial merge",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "VisionEncoder"
+      }
+    },
+    {
+      "id": "text_model",
+      "type": "text",
+      "x": 450,
+      "y": 880,
+      "width": 300,
+      "height": 180,
+      "color": "4",
+      "text": "Qwen2VLTextModel\nmodeling_qwen2_vl.py:768\nInherits: Qwen2VLPreTrainedModel\n\n• embed_tokens - embeddings\n• Qwen2VLDecoderLayer:570 (×80)\n  - Qwen2VLAttention:478 (GQA)\n  - Qwen2MLP:462 (SwiGLU)\n• Qwen2RMSNorm - normalization",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "LanguageModel"
+      }
+    },
+    {
+      "id": "multimodal_fusion",
+      "type": "text",
+      "x": 800,
+      "y": 880,
+      "width": 280,
+      "height": 180,
+      "color": "6",
+      "text": "Multimodal Fusion\nIn Qwen2VLModel\n\n• Vision embeddings merged\n• Text embeddings\n• Combined via position IDs\n• 3D RoPE for vision\n• 1D RoPE for text",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "MultimodalProjector"
+      }
+    },
+    {
+      "id": "generation_mixin",
+      "type": "text",
+      "x": 900,
+      "y": 500,
+      "width": 260,
+      "height": 120,
+      "color": "6",
+      "text": "GenerationMixin\n(inherited)\n• generate()\n• beam search\n• sampling strategies",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "GenerationMixin"
+      }
+    },
+    {
+      "id": "model_output",
+      "type": "text",
+      "x": 450,
+      "y": 1140,
+      "width": 400,
+      "height": 100,
+      "color": "2",
+      "text": "Qwen2VLCausalLMOutputWithPast\nmodeling_qwen2_vl.py:86\n• logits, loss\n• past_key_values (KV cache)\n• rope_deltas",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ModelOutput"
+      }
+    },
+    {
+      "id": "pretrained_model",
+      "type": "text",
+      "x": 100,
+      "y": 600,
+      "width": 250,
+      "height": 100,
+      "color": "1",
+      "text": "PreTrainedModel\n(transformers base)\n• from_pretrained()\n• save_pretrained()",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "PreTrainedModel"
+      }
+    },
+    {
+      "id": "image_utils",
+      "type": "text",
+      "x": -200,
+      "y": 320,
+      "width": 220,
+      "height": 100,
+      "color": "5",
+      "text": "image_utils.py\nimage_transforms.py\n• resize, rescale\n• normalize, pad\n• convert_to_rgb",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageTransform"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "user_input",
+      "toNode": "processor",
+      "color": "5",
+      "vv": {
+        "component": "processes"
+      }
+    },
+    {
+      "id": "e2",
+      "fromNode": "processor",
+      "toNode": "image_processor",
+      "color": "4",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e3",
+      "fromNode": "processor",
+      "toNode": "video_processor",
+      "color": "4",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e4",
+      "fromNode": "processor",
+      "toNode": "tokenizer",
+      "color": "4",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e5",
+      "fromNode": "image_processor",
+      "toNode": "image_utils",
+      "color": "4",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e6",
+      "fromNode": "processor",
+      "toNode": "for_conditional_gen",
+      "color": "5",
+      "vv": {
+        "component": "processes"
+      }
+    },
+    {
+      "id": "e7",
+      "fromNode": "for_conditional_gen",
+      "toNode": "qwen2vl_model",
+      "color": "4",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e8",
+      "fromNode": "qwen2vl_model",
+      "toNode": "vision_transformer",
+      "color": "4",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e9",
+      "fromNode": "qwen2vl_model",
+      "toNode": "text_model",
+      "color": "4",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e10",
+      "fromNode": "vision_transformer",
+      "toNode": "multimodal_fusion",
+      "color": "5",
+      "vv": {
+        "component": "encodes"
+      }
+    },
+    {
+      "id": "e11",
+      "fromNode": "text_model",
+      "toNode": "multimodal_fusion",
+      "color": "5",
+      "vv": {
+        "component": "encodes"
+      }
+    },
+    {
+      "id": "e12",
+      "fromNode": "multimodal_fusion",
+      "toNode": "model_output",
+      "color": "5",
+      "vv": {
+        "component": "generates"
+      }
+    },
+    {
+      "id": "e13",
+      "fromNode": "for_conditional_gen",
+      "toNode": "generation_mixin",
+      "color": "1",
+      "vv": {
+        "component": "extends"
+      }
+    },
+    {
+      "id": "e14",
+      "fromNode": "for_conditional_gen",
+      "toNode": "pretrained_model",
+      "color": "1",
+      "vv": {
+        "component": "extends"
+      }
+    },
+    {
+      "id": "e15",
+      "fromNode": "config",
+      "toNode": "for_conditional_gen",
+      "color": "3",
+      "vv": {
+        "component": "configures"
+      }
+    },
+    {
+      "id": "e16",
+      "fromNode": "qwen2vl_model",
+      "toNode": "model_output",
+      "color": "5",
+      "vv": {
+        "component": "generates"
+      }
+    }
+  ]
+}

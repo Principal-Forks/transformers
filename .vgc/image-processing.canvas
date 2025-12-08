@@ -1,0 +1,367 @@
+{
+  "vv": {
+    "name": "Image Processing Layer",
+    "version": "1.0.0",
+    "nodeTypes": {
+      "component": {
+        "shapes": ["rounded"]
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "input",
+      "type": "text",
+      "x": 400,
+      "y": 50,
+      "width": 200,
+      "height": 60,
+      "text": "Raw Image/Video Input",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "API"
+      }
+    },
+    {
+      "id": "image_utils",
+      "type": "text",
+      "x": 100,
+      "y": 180,
+      "width": 180,
+      "height": 80,
+      "text": "image_utils.py\nload, convert formats",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "FeatureExtractor"
+      }
+    },
+    {
+      "id": "video_utils",
+      "type": "text",
+      "x": 320,
+      "y": 180,
+      "width": 180,
+      "height": 80,
+      "text": "video_utils.py\nframe extraction",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "VideoProcessor"
+      }
+    },
+    {
+      "id": "processor_base",
+      "type": "text",
+      "x": 540,
+      "y": 180,
+      "width": 200,
+      "height": 80,
+      "text": "BaseImageProcessor\nAbstract interface",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageProcessor"
+      }
+    },
+    {
+      "id": "transforms",
+      "type": "text",
+      "x": 780,
+      "y": 180,
+      "width": 180,
+      "height": 80,
+      "text": "image_transforms.py\ncore operations",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageTransform"
+      }
+    },
+    {
+      "id": "resize",
+      "type": "text",
+      "x": 50,
+      "y": 360,
+      "width": 150,
+      "height": 70,
+      "text": "Resize\n(multiple strategies)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageTransform"
+      }
+    },
+    {
+      "id": "normalize",
+      "type": "text",
+      "x": 230,
+      "y": 360,
+      "width": 150,
+      "height": 70,
+      "text": "Normalize\n(mean, std)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageTransform"
+      }
+    },
+    {
+      "id": "rescale",
+      "type": "text",
+      "x": 410,
+      "y": 360,
+      "width": 150,
+      "height": 70,
+      "text": "Rescale\n(pixel values)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageTransform"
+      }
+    },
+    {
+      "id": "pad",
+      "type": "text",
+      "x": 590,
+      "y": 360,
+      "width": 150,
+      "height": 70,
+      "text": "Pad\n(spatial, temporal)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageTransform"
+      }
+    },
+    {
+      "id": "flip",
+      "type": "text",
+      "x": 770,
+      "y": 360,
+      "width": 150,
+      "height": 70,
+      "text": "Flip\n(horizontal, vertical)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageTransform"
+      }
+    },
+    {
+      "id": "crop",
+      "type": "text",
+      "x": 950,
+      "y": 360,
+      "width": 150,
+      "height": 70,
+      "text": "Crop\n(center, random)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageTransform"
+      }
+    },
+    {
+      "id": "model_processor",
+      "type": "text",
+      "x": 200,
+      "y": 520,
+      "width": 200,
+      "height": 80,
+      "text": "Model-Specific Processor\n(e.g., Qwen2VLProcessor)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageProcessor"
+      }
+    },
+    {
+      "id": "processing_utils",
+      "type": "text",
+      "x": 450,
+      "y": 520,
+      "width": 200,
+      "height": 80,
+      "text": "processing_utils.py\nUnified processor",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Processor"
+      }
+    },
+    {
+      "id": "batch_collate",
+      "type": "text",
+      "x": 700,
+      "y": 520,
+      "width": 180,
+      "height": 80,
+      "text": "Batch Collator\n(data_collator.py)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "BatchCollator"
+      }
+    },
+    {
+      "id": "tensor_output",
+      "type": "text",
+      "x": 400,
+      "y": 680,
+      "width": 200,
+      "height": 70,
+      "text": "Processed Tensors\n(pixel_values, etc.)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ModelOutput"
+      }
+    },
+    {
+      "id": "config",
+      "type": "text",
+      "x": 800,
+      "y": 50,
+      "width": 150,
+      "height": 60,
+      "text": "Image Config\n(size, mean, std)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Config"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "input",
+      "toNode": "image_utils",
+      "vv": {
+        "component": "processes"
+      }
+    },
+    {
+      "id": "e2",
+      "fromNode": "input",
+      "toNode": "video_utils",
+      "vv": {
+        "component": "processes"
+      }
+    },
+    {
+      "id": "e3",
+      "fromNode": "image_utils",
+      "toNode": "processor_base",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e4",
+      "fromNode": "video_utils",
+      "toNode": "processor_base",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e5",
+      "fromNode": "processor_base",
+      "toNode": "transforms",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e6",
+      "fromNode": "transforms",
+      "toNode": "resize",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e7",
+      "fromNode": "transforms",
+      "toNode": "normalize",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e8",
+      "fromNode": "transforms",
+      "toNode": "rescale",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e9",
+      "fromNode": "transforms",
+      "toNode": "pad",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e10",
+      "fromNode": "transforms",
+      "toNode": "flip",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e11",
+      "fromNode": "transforms",
+      "toNode": "crop",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e12",
+      "fromNode": "processor_base",
+      "toNode": "model_processor",
+      "vv": {
+        "component": "extends"
+      }
+    },
+    {
+      "id": "e13",
+      "fromNode": "model_processor",
+      "toNode": "processing_utils",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e14",
+      "fromNode": "processing_utils",
+      "toNode": "batch_collate",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e15",
+      "fromNode": "batch_collate",
+      "toNode": "tensor_output",
+      "vv": {
+        "component": "generates"
+      }
+    },
+    {
+      "id": "e16",
+      "fromNode": "config",
+      "toNode": "processor_base",
+      "vv": {
+        "component": "configures"
+      }
+    }
+  ]
+}

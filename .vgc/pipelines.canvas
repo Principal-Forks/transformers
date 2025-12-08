@@ -1,0 +1,331 @@
+{
+  "vv": {
+    "name": "Pipelines Architecture",
+    "version": "1.0.0",
+    "nodeTypes": {
+      "component": {
+        "shapes": ["rounded"]
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "user_api",
+      "type": "text",
+      "x": 400,
+      "y": 50,
+      "width": 200,
+      "height": 60,
+      "text": "User API Call",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "API"
+      }
+    },
+    {
+      "id": "pipeline_factory",
+      "type": "text",
+      "x": 400,
+      "y": 180,
+      "width": 200,
+      "height": 80,
+      "text": "pipeline()\nFactory Function",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "AutoPipeline"
+      }
+    },
+    {
+      "id": "task_detection",
+      "type": "text",
+      "x": 100,
+      "y": 320,
+      "width": 180,
+      "height": 70,
+      "text": "Task Detection\n(text-gen, vqa, etc)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Config"
+      }
+    },
+    {
+      "id": "pipeline_base",
+      "type": "text",
+      "x": 400,
+      "y": 320,
+      "width": 200,
+      "height": 80,
+      "text": "Pipeline Base Class\n(common interface)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "PipelineBase"
+      }
+    },
+    {
+      "id": "task_pipeline",
+      "type": "text",
+      "x": 700,
+      "y": 320,
+      "width": 180,
+      "height": 70,
+      "text": "Task-Specific Pipeline\n(ImageTextToText)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "TaskPipeline"
+      }
+    },
+    {
+      "id": "model_loader",
+      "type": "text",
+      "x": 100,
+      "y": 500,
+      "width": 180,
+      "height": 80,
+      "text": "Model Loader\n(from_pretrained)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "HubConnector"
+      }
+    },
+    {
+      "id": "model",
+      "type": "text",
+      "x": 350,
+      "y": 500,
+      "width": 150,
+      "height": 80,
+      "text": "Model Instance",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "processor_loader",
+      "type": "text",
+      "x": 550,
+      "y": 500,
+      "width": 180,
+      "height": 80,
+      "text": "Processor Loader",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "HubConnector"
+      }
+    },
+    {
+      "id": "processor",
+      "type": "text",
+      "x": 780,
+      "y": 500,
+      "width": 150,
+      "height": 80,
+      "text": "Processor\n(tokenizer + image)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Processor"
+      }
+    },
+    {
+      "id": "preprocess",
+      "type": "text",
+      "x": 200,
+      "y": 680,
+      "width": 160,
+      "height": 70,
+      "text": "preprocess()\ninputs → tensors",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageProcessor"
+      }
+    },
+    {
+      "id": "forward",
+      "type": "text",
+      "x": 400,
+      "y": 680,
+      "width": 160,
+      "height": 70,
+      "text": "_forward()\nmodel inference",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "postprocess",
+      "type": "text",
+      "x": 600,
+      "y": 680,
+      "width": 160,
+      "height": 70,
+      "text": "postprocess()\ntensors → results",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ModelOutput"
+      }
+    },
+    {
+      "id": "output",
+      "type": "text",
+      "x": 400,
+      "y": 820,
+      "width": 200,
+      "height": 60,
+      "text": "Final Output (dict)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "API"
+      }
+    },
+    {
+      "id": "hub",
+      "type": "text",
+      "x": -100,
+      "y": 500,
+      "width": 150,
+      "height": 60,
+      "text": "HF Hub",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Storage"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "user_api",
+      "toNode": "pipeline_factory",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e2",
+      "fromNode": "pipeline_factory",
+      "toNode": "task_detection",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e3",
+      "fromNode": "pipeline_factory",
+      "toNode": "pipeline_base",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e4",
+      "fromNode": "task_detection",
+      "toNode": "task_pipeline",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e5",
+      "fromNode": "pipeline_base",
+      "toNode": "task_pipeline",
+      "vv": {
+        "component": "extends"
+      }
+    },
+    {
+      "id": "e6",
+      "fromNode": "task_pipeline",
+      "toNode": "model_loader",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e7",
+      "fromNode": "task_pipeline",
+      "toNode": "processor_loader",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e8",
+      "fromNode": "model_loader",
+      "toNode": "model",
+      "vv": {
+        "component": "loads"
+      }
+    },
+    {
+      "id": "e9",
+      "fromNode": "processor_loader",
+      "toNode": "processor",
+      "vv": {
+        "component": "loads"
+      }
+    },
+    {
+      "id": "e10",
+      "fromNode": "task_pipeline",
+      "toNode": "preprocess",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e11",
+      "fromNode": "preprocess",
+      "toNode": "forward",
+      "vv": {
+        "component": "processes"
+      }
+    },
+    {
+      "id": "e12",
+      "fromNode": "forward",
+      "toNode": "postprocess",
+      "vv": {
+        "component": "processes"
+      }
+    },
+    {
+      "id": "e13",
+      "fromNode": "postprocess",
+      "toNode": "output",
+      "vv": {
+        "component": "generates"
+      }
+    },
+    {
+      "id": "e14",
+      "fromNode": "hub",
+      "toNode": "model_loader",
+      "vv": {
+        "component": "loads"
+      }
+    },
+    {
+      "id": "e15",
+      "fromNode": "hub",
+      "toNode": "processor_loader",
+      "vv": {
+        "component": "loads"
+      }
+    }
+  ]
+}

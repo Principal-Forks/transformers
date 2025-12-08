@@ -1,0 +1,171 @@
+{
+  "vv": {
+    "name": "Transformers Architecture",
+    "version": "1.0.0",
+    "nodeTypes": {
+      "component": {
+        "shapes": [
+          "rounded"
+        ]
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "pipeline",
+      "type": "text",
+      "x": 41,
+      "y": -12,
+      "width": 200,
+      "height": 80,
+      "text": "High-Level Pipeline",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Pipeline"
+      }
+    },
+    {
+      "id": "model",
+      "type": "text",
+      "x": 46,
+      "y": 404,
+      "width": 200,
+      "height": 80,
+      "text": "Transformer Models",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "tokenizer",
+      "type": "text",
+      "x": 614,
+      "y": 183,
+      "width": 200,
+      "height": 80,
+      "text": "Tokenizers",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Tokenizer"
+      }
+    },
+    {
+      "id": "config",
+      "type": "text",
+      "x": 268,
+      "y": 182,
+      "width": 200,
+      "height": 80,
+      "text": "Model Config",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Config"
+      }
+    },
+    {
+      "id": "trainer",
+      "type": "text",
+      "x": -195,
+      "y": 186,
+      "width": 200,
+      "height": 80,
+      "text": "Training System",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Trainer"
+      }
+    },
+    {
+      "id": "dataloader",
+      "type": "text",
+      "x": -195,
+      "y": 556,
+      "width": 200,
+      "height": 80,
+      "text": "Data Processing",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "DataLoader"
+      }
+    },
+    {
+      "id": "storage",
+      "type": "text",
+      "x": 425,
+      "y": 576,
+      "width": 200,
+      "height": 80,
+      "text": "Model Hub",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Storage"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "pipeline",
+      "toNode": "model",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e2",
+      "fromNode": "pipeline",
+      "toNode": "tokenizer",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e3",
+      "fromNode": "config",
+      "toNode": "model",
+      "vv": {
+        "component": "configures"
+      }
+    },
+    {
+      "id": "e4",
+      "fromNode": "model",
+      "toNode": "storage",
+      "vv": {
+        "component": "loads"
+      }
+    },
+    {
+      "id": "e5",
+      "fromNode": "trainer",
+      "toNode": "model",
+      "vv": {
+        "component": "trains"
+      }
+    },
+    {
+      "id": "e6",
+      "fromNode": "trainer",
+      "toNode": "dataloader",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e7",
+      "fromNode": "tokenizer",
+      "toNode": "storage",
+      "vv": {
+        "component": "loads"
+      }
+    }
+  ]
+}

@@ -1,0 +1,425 @@
+{
+  "vv": {
+    "name": "Model Infrastructure",
+    "version": "1.0.0",
+    "nodeTypes": {
+      "component": {
+        "shapes": ["rounded"]
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "pretrained_model",
+      "type": "text",
+      "x": 400,
+      "y": 50,
+      "width": 200,
+      "height": 80,
+      "text": "PreTrainedModel\nBase class (modeling_utils.py)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "PreTrainedModel"
+      }
+    },
+    {
+      "id": "config_base",
+      "type": "text",
+      "x": 100,
+      "y": 50,
+      "width": 180,
+      "height": 80,
+      "text": "PretrainedConfig\nBase config class",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Config"
+      }
+    },
+    {
+      "id": "model_output",
+      "type": "text",
+      "x": 700,
+      "y": 50,
+      "width": 180,
+      "height": 80,
+      "text": "ModelOutput\nStructured outputs",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ModelOutput"
+      }
+    },
+    {
+      "id": "loading",
+      "type": "text",
+      "x": 50,
+      "y": 200,
+      "width": 160,
+      "height": 70,
+      "text": "Model Loading\n(from_pretrained)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "HubConnector"
+      }
+    },
+    {
+      "id": "saving",
+      "type": "text",
+      "x": 250,
+      "y": 200,
+      "width": 160,
+      "height": 70,
+      "text": "Model Saving\n(save_pretrained)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Storage"
+      }
+    },
+    {
+      "id": "generation_mixin",
+      "type": "text",
+      "x": 450,
+      "y": 200,
+      "width": 160,
+      "height": 70,
+      "text": "GenerationMixin\n(generate method)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "GenerationMixin"
+      }
+    },
+    {
+      "id": "quantization",
+      "type": "text",
+      "x": 650,
+      "y": 200,
+      "width": 160,
+      "height": 70,
+      "text": "Quantization\n(int8, int4)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Quantizer"
+      }
+    },
+    {
+      "id": "device_map",
+      "type": "text",
+      "x": 850,
+      "y": 200,
+      "width": 160,
+      "height": 70,
+      "text": "Device Mapping\n(multi-GPU)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Accelerator"
+      }
+    },
+    {
+      "id": "model_specific",
+      "type": "text",
+      "x": 400,
+      "y": 340,
+      "width": 200,
+      "height": 80,
+      "text": "Model-Specific Class\n(e.g., Qwen2VLForConditional...)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "embedding",
+      "type": "text",
+      "x": 100,
+      "y": 490,
+      "width": 150,
+      "height": 70,
+      "text": "Embedding Layer",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "attention",
+      "type": "text",
+      "x": 280,
+      "y": 490,
+      "width": 150,
+      "height": 70,
+      "text": "Attention Layers\n(self, cross)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "AttentionLayer"
+      }
+    },
+    {
+      "id": "ffn",
+      "type": "text",
+      "x": 460,
+      "y": 490,
+      "width": 150,
+      "height": 70,
+      "text": "Feed-Forward\nLayers",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "norm",
+      "type": "text",
+      "x": 640,
+      "y": 490,
+      "width": 150,
+      "height": 70,
+      "text": "Normalization\n(LayerNorm, RMS)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "output_head",
+      "type": "text",
+      "x": 820,
+      "y": 490,
+      "width": 150,
+      "height": 70,
+      "text": "Output Head\n(LM, classification)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "flash_attention",
+      "type": "text",
+      "x": 100,
+      "y": 630,
+      "width": 160,
+      "height": 70,
+      "text": "Flash Attention\nOptimization",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Accelerator"
+      }
+    },
+    {
+      "id": "rope",
+      "type": "text",
+      "x": 290,
+      "y": 630,
+      "width": 160,
+      "height": 70,
+      "text": "RoPE Embeddings\nPositional encoding",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "kv_cache",
+      "type": "text",
+      "x": 480,
+      "y": 630,
+      "width": 160,
+      "height": 70,
+      "text": "KV Cache\n(cache_utils.py)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "attention_mask",
+      "type": "text",
+      "x": 670,
+      "y": 630,
+      "width": 160,
+      "height": 70,
+      "text": "Attention Masking\n(causal, padding)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Model"
+      }
+    },
+    {
+      "id": "integrations",
+      "type": "text",
+      "x": 860,
+      "y": 630,
+      "width": 160,
+      "height": 70,
+      "text": "Integrations\n(PEFT, DeepSpeed)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Accelerator"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "config_base",
+      "toNode": "pretrained_model",
+      "vv": {
+        "component": "configures"
+      }
+    },
+    {
+      "id": "e2",
+      "fromNode": "pretrained_model",
+      "toNode": "model_output",
+      "vv": {
+        "component": "generates"
+      }
+    },
+    {
+      "id": "e3",
+      "fromNode": "pretrained_model",
+      "toNode": "loading",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e4",
+      "fromNode": "pretrained_model",
+      "toNode": "saving",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e5",
+      "fromNode": "pretrained_model",
+      "toNode": "generation_mixin",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e6",
+      "fromNode": "pretrained_model",
+      "toNode": "quantization",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e7",
+      "fromNode": "pretrained_model",
+      "toNode": "device_map",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e8",
+      "fromNode": "pretrained_model",
+      "toNode": "model_specific",
+      "vv": {
+        "component": "extends"
+      }
+    },
+    {
+      "id": "e9",
+      "fromNode": "model_specific",
+      "toNode": "embedding",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e10",
+      "fromNode": "model_specific",
+      "toNode": "attention",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e11",
+      "fromNode": "model_specific",
+      "toNode": "ffn",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e12",
+      "fromNode": "model_specific",
+      "toNode": "norm",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e13",
+      "fromNode": "model_specific",
+      "toNode": "output_head",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e14",
+      "fromNode": "attention",
+      "toNode": "flash_attention",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e15",
+      "fromNode": "attention",
+      "toNode": "rope",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e16",
+      "fromNode": "attention",
+      "toNode": "kv_cache",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e17",
+      "fromNode": "attention",
+      "toNode": "attention_mask",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e18",
+      "fromNode": "pretrained_model",
+      "toNode": "integrations",
+      "vv": {
+        "component": "uses"
+      }
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+version: "1.0.0"
+name: "Transformers Architecture Library"
+
+nodeComponents:
+  # High-level components
+  Model:
+    color: "4"
+    icon: "Brain"
+    description: "Transformer model architectures"
+
+  Tokenizer:
+    color: "5"
+    icon: "Type"
+    description: "Text tokenization components"
+
+  Pipeline:
+    color: "2"
+    icon: "GitBranch"
+    description: "High-level pipeline interfaces"
+
+  Config:
+    color: "3"
+    icon: "Settings"
+    description: "Configuration management"
+
+  Trainer:
+    color: "6"
+    icon: "Zap"
+    description: "Training and evaluation"
+
+  DataLoader:
+    color: "5"
+    icon: "Database"
+    description: "Dataset loading and processing"
+
+  API:
+    color: "2"
+    icon: "Globe"
+    description: "External API interfaces"
+
+  Storage:
+    color: "3"
+    icon: "HardDrive"
+    description: "Model storage and caching"
+
+  # Multimodal Model Components
+  VisionEncoder:
+    color: "4"
+    icon: "Eye"
+    description: "Vision encoder (ViT, etc.)"
+
+  LanguageModel:
+    color: "4"
+    icon: "MessageSquare"
+    description: "Language model decoder"
+
+  MultimodalProjector:
+    color: "6"
+    icon: "Layers"
+    description: "Cross-modal projection layer"
+
+  ImageProcessor:
+    color: "5"
+    icon: "Image"
+    description: "Image preprocessing and transformation"
+
+  VideoProcessor:
+    color: "5"
+    icon: "Video"
+    description: "Video frame processing"
+
+  Processor:
+    color: "5"
+    icon: "Package"
+    description: "Unified multimodal processor"
+
+  # Pipeline Components
+  PipelineBase:
+    color: "2"
+    icon: "Workflow"
+    description: "Base pipeline infrastructure"
+
+  AutoPipeline:
+    color: "2"
+    icon: "Wand"
+    description: "Auto pipeline selector"
+
+  TaskPipeline:
+    color: "2"
+    icon: "Target"
+    description: "Task-specific pipeline"
+
+  # Processing Components
+  ImageTransform:
+    color: "5"
+    icon: "Crop"
+    description: "Image transformation operations"
+
+  FeatureExtractor:
+    color: "5"
+    icon: "Scan"
+    description: "Feature extraction utilities"
+
+  BatchCollator:
+    color: "5"
+    icon: "Grid"
+    description: "Batch collation"
+
+  # Model Infrastructure
+  PreTrainedModel:
+    color: "4"
+    icon: "Box"
+    description: "Base model class"
+
+  ModelOutput:
+    color: "4"
+    icon: "FileOutput"
+    description: "Structured model outputs"
+
+  AttentionLayer:
+    color: "6"
+    icon: "Focus"
+    description: "Attention mechanism"
+
+  GenerationMixin:
+    color: "6"
+    icon: "Sparkles"
+    description: "Text generation utilities"
+
+  # Quantization Components
+  Quantizer:
+    color: "3"
+    icon: "Minimize"
+    description: "Model quantization"
+
+  # Integration Components
+  Accelerator:
+    color: "1"
+    icon: "Rocket"
+    description: "Training acceleration"
+
+  HubConnector:
+    color: "2"
+    icon: "Cloud"
+    description: "HuggingFace Hub integration"
+
+edgeComponents:
+  uses:
+    style: "solid"
+    label: "uses"
+    description: "Direct usage dependency"
+
+  configures:
+    style: "dashed"
+    label: "configures"
+    description: "Configuration relationship"
+
+  loads:
+    style: "dotted"
+    label: "loads"
+    description: "Data loading relationship"
+
+  trains:
+    style: "animated"
+    label: "trains"
+    description: "Training relationship"
+
+  processes:
+    style: "solid"
+    label: "processes"
+    description: "Data processing flow"
+
+  extends:
+    style: "dashed"
+    label: "extends"
+    description: "Inheritance relationship"
+
+  transforms:
+    style: "solid"
+    label: "transforms"
+    description: "Data transformation"
+
+  encodes:
+    style: "solid"
+    label: "encodes"
+    description: "Encoding operation"
+
+  projects:
+    style: "solid"
+    label: "projects"
+    description: "Projection operation"
+
+  generates:
+    style: "solid"
+    label: "generates"
+    description: "Generation operation"

@@ -1,0 +1,317 @@
+{
+  "vv": {
+    "name": "Multimodal Models Architecture",
+    "version": "1.0.0",
+    "nodeTypes": {
+      "component": {
+        "shapes": ["rounded"]
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "input_image",
+      "type": "text",
+      "x": 100,
+      "y": 50,
+      "width": 180,
+      "height": 60,
+      "text": "Image/Video Input",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "API"
+      }
+    },
+    {
+      "id": "input_text",
+      "type": "text",
+      "x": 900,
+      "y": 50,
+      "width": 180,
+      "height": 60,
+      "text": "Text Prompt",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "API"
+      }
+    },
+    {
+      "id": "image_processor",
+      "type": "text",
+      "x": 100,
+      "y": 180,
+      "width": 180,
+      "height": 80,
+      "text": "ImageProcessor\n(resize, normalize)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ImageProcessor"
+      }
+    },
+    {
+      "id": "tokenizer",
+      "type": "text",
+      "x": 900,
+      "y": 180,
+      "width": 180,
+      "height": 80,
+      "text": "Tokenizer\n(text → tokens)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Tokenizer"
+      }
+    },
+    {
+      "id": "processor",
+      "type": "text",
+      "x": 500,
+      "y": 150,
+      "width": 200,
+      "height": 80,
+      "text": "Processor\n(unified interface)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Processor"
+      }
+    },
+    {
+      "id": "vision_encoder",
+      "type": "text",
+      "x": 100,
+      "y": 350,
+      "width": 180,
+      "height": 100,
+      "text": "Vision Encoder\n(ViT/CLIP)\npatch embeddings",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "VisionEncoder"
+      }
+    },
+    {
+      "id": "projector",
+      "type": "text",
+      "x": 350,
+      "y": 350,
+      "width": 180,
+      "height": 100,
+      "text": "Multimodal Projector\n(vision → language)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "MultimodalProjector"
+      }
+    },
+    {
+      "id": "language_model",
+      "type": "text",
+      "x": 600,
+      "y": 350,
+      "width": 180,
+      "height": 100,
+      "text": "Language Model\n(Qwen/Llama)\nautoregressive decoder",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "LanguageModel"
+      }
+    },
+    {
+      "id": "generation",
+      "type": "text",
+      "x": 850,
+      "y": 350,
+      "width": 180,
+      "height": 100,
+      "text": "Generation Utils\n(beam search, sampling)",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "GenerationMixin"
+      }
+    },
+    {
+      "id": "output",
+      "type": "text",
+      "x": 500,
+      "y": 550,
+      "width": 200,
+      "height": 80,
+      "text": "Generated Text Output",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "ModelOutput"
+      }
+    },
+    {
+      "id": "config_vision",
+      "type": "text",
+      "x": -100,
+      "y": 350,
+      "width": 150,
+      "height": 60,
+      "text": "Vision Config",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Config"
+      }
+    },
+    {
+      "id": "config_text",
+      "type": "text",
+      "x": 1050,
+      "y": 350,
+      "width": 150,
+      "height": 60,
+      "text": "Text Config",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Config"
+      }
+    },
+    {
+      "id": "hub",
+      "type": "text",
+      "x": 500,
+      "y": -100,
+      "width": 200,
+      "height": 60,
+      "text": "HuggingFace Hub",
+      "vv": {
+        "nodeType": "component",
+        "shape": "rounded",
+        "component": "Storage"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "input_image",
+      "toNode": "image_processor",
+      "vv": {
+        "component": "processes"
+      }
+    },
+    {
+      "id": "e2",
+      "fromNode": "input_text",
+      "toNode": "tokenizer",
+      "vv": {
+        "component": "processes"
+      }
+    },
+    {
+      "id": "e3",
+      "fromNode": "image_processor",
+      "toNode": "processor",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e4",
+      "fromNode": "tokenizer",
+      "toNode": "processor",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e5",
+      "fromNode": "image_processor",
+      "toNode": "vision_encoder",
+      "vv": {
+        "component": "processes"
+      }
+    },
+    {
+      "id": "e6",
+      "fromNode": "vision_encoder",
+      "toNode": "projector",
+      "vv": {
+        "component": "encodes"
+      }
+    },
+    {
+      "id": "e7",
+      "fromNode": "projector",
+      "toNode": "language_model",
+      "vv": {
+        "component": "projects"
+      }
+    },
+    {
+      "id": "e8",
+      "fromNode": "tokenizer",
+      "toNode": "language_model",
+      "vv": {
+        "component": "processes"
+      }
+    },
+    {
+      "id": "e9",
+      "fromNode": "language_model",
+      "toNode": "generation",
+      "vv": {
+        "component": "uses"
+      }
+    },
+    {
+      "id": "e10",
+      "fromNode": "generation",
+      "toNode": "output",
+      "vv": {
+        "component": "generates"
+      }
+    },
+    {
+      "id": "e11",
+      "fromNode": "config_vision",
+      "toNode": "vision_encoder",
+      "vv": {
+        "component": "configures"
+      }
+    },
+    {
+      "id": "e12",
+      "fromNode": "config_text",
+      "toNode": "language_model",
+      "vv": {
+        "component": "configures"
+      }
+    },
+    {
+      "id": "e13",
+      "fromNode": "hub",
+      "toNode": "processor",
+      "vv": {
+        "component": "loads"
+      }
+    },
+    {
+      "id": "e14",
+      "fromNode": "hub",
+      "toNode": "config_vision",
+      "vv": {
+        "component": "loads"
+      }
+    },
+    {
+      "id": "e15",
+      "fromNode": "hub",
+      "toNode": "config_text",
+      "vv": {
+        "component": "loads"
+      }
+    }
+  ]
+}
