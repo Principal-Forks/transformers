@@ -8,6 +8,44 @@
           "rounded"
         ]
       }
+    },
+    "edgeTypes": {
+      "uses": {
+        "style": "solid",
+        "color": "#10b981",
+        "width": 2,
+        "directed": true
+      },
+      "processes": {
+        "style": "solid",
+        "color": "#06b6d4",
+        "width": 2,
+        "directed": true
+      },
+      "extends": {
+        "style": "dashed",
+        "color": "#ef4444",
+        "width": 2,
+        "directed": true
+      },
+      "configures": {
+        "style": "dashed",
+        "color": "#fbbf24",
+        "width": 2,
+        "directed": true
+      },
+      "encodes": {
+        "style": "solid",
+        "color": "#06b6d4",
+        "width": 2,
+        "directed": true
+      },
+      "generates": {
+        "style": "solid",
+        "color": "#06b6d4",
+        "width": 2,
+        "directed": true
+      }
     }
   },
   "nodes": [
@@ -274,8 +312,8 @@
       "toNode": "processor",
       "color": "5",
       "vv": {
-        "component": "processes",
-        "stroke": "#06b6d4"
+        "stroke": "#06b6d4",
+        "edgeType": "processes"
       }
     },
     {
@@ -284,8 +322,8 @@
       "toNode": "image_processor",
       "color": "4",
       "vv": {
-        "component": "uses",
-        "stroke": "#10b981"
+        "stroke": "#10b981",
+        "edgeType": "uses"
       }
     },
     {
@@ -294,8 +332,8 @@
       "toNode": "video_processor",
       "color": "4",
       "vv": {
-        "component": "uses",
-        "stroke": "#10b981"
+        "stroke": "#10b981",
+        "edgeType": "uses"
       }
     },
     {
@@ -304,8 +342,8 @@
       "toNode": "tokenizer",
       "color": "4",
       "vv": {
-        "component": "uses",
-        "stroke": "#10b981"
+        "stroke": "#10b981",
+        "edgeType": "uses"
       }
     },
     {
@@ -314,8 +352,8 @@
       "toNode": "image_utils",
       "color": "4",
       "vv": {
-        "component": "uses",
-        "stroke": "#10b981"
+        "stroke": "#10b981",
+        "edgeType": "uses"
       }
     },
     {
@@ -324,8 +362,8 @@
       "toNode": "for_conditional_gen",
       "color": "5",
       "vv": {
-        "component": "processes",
-        "stroke": "#06b6d4"
+        "stroke": "#06b6d4",
+        "edgeType": "processes"
       }
     },
     {
@@ -334,8 +372,8 @@
       "toNode": "qwen2vl_model",
       "color": "4",
       "vv": {
-        "component": "uses",
-        "stroke": "#10b981"
+        "stroke": "#10b981",
+        "edgeType": "uses"
       }
     },
     {
@@ -344,8 +382,8 @@
       "toNode": "vision_transformer",
       "color": "4",
       "vv": {
-        "component": "uses",
-        "stroke": "#10b981"
+        "stroke": "#10b981",
+        "edgeType": "uses"
       }
     },
     {
@@ -354,8 +392,8 @@
       "toNode": "text_model",
       "color": "4",
       "vv": {
-        "component": "uses",
-        "stroke": "#10b981"
+        "stroke": "#10b981",
+        "edgeType": "uses"
       }
     },
     {
@@ -364,8 +402,8 @@
       "toNode": "multimodal_fusion",
       "color": "5",
       "vv": {
-        "component": "encodes",
-        "stroke": "#06b6d4"
+        "stroke": "#06b6d4",
+        "edgeType": "encodes"
       }
     },
     {
@@ -374,8 +412,8 @@
       "toNode": "multimodal_fusion",
       "color": "5",
       "vv": {
-        "component": "encodes",
-        "stroke": "#06b6d4"
+        "stroke": "#06b6d4",
+        "edgeType": "encodes"
       }
     },
     {
@@ -384,8 +422,8 @@
       "toNode": "model_output",
       "color": "5",
       "vv": {
-        "component": "generates",
-        "stroke": "#06b6d4"
+        "stroke": "#06b6d4",
+        "edgeType": "generates"
       }
     },
     {
@@ -394,8 +432,8 @@
       "toNode": "generation_mixin",
       "color": "1",
       "vv": {
-        "component": "extends",
-        "stroke": "#ef4444"
+        "stroke": "#ef4444",
+        "edgeType": "extends"
       }
     },
     {
@@ -404,8 +442,8 @@
       "toNode": "pretrained_model",
       "color": "1",
       "vv": {
-        "component": "extends",
-        "stroke": "#ef4444"
+        "stroke": "#ef4444",
+        "edgeType": "extends"
       }
     },
     {
@@ -414,8 +452,8 @@
       "toNode": "for_conditional_gen",
       "color": "3",
       "vv": {
-        "component": "configures",
-        "stroke": "#fbbf24"
+        "stroke": "#fbbf24",
+        "edgeType": "configures"
       }
     },
     {
@@ -424,8 +462,8 @@
       "toNode": "model_output",
       "color": "5",
       "vv": {
-        "component": "generates",
-        "stroke": "#06b6d4"
+        "stroke": "#06b6d4",
+        "edgeType": "generates"
       }
     }
   ]
