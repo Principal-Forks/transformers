@@ -4,7 +4,9 @@
     "version": "1.0.0",
     "nodeTypes": {
       "component": {
-        "shapes": ["rounded"]
+        "shapes": [
+          "rounded"
+        ]
       }
     }
   },
@@ -21,7 +23,9 @@
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "API"
+        "component": "API",
+        "fill": "#ff9800",
+        "stroke": "#ff9800"
       }
     },
     {
@@ -36,7 +40,9 @@
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "Processor"
+        "component": "Processor",
+        "fill": "#06b6d4",
+        "stroke": "#06b6d4"
       }
     },
     {
@@ -47,11 +53,13 @@
       "width": 280,
       "height": 100,
       "color": "5",
-      "text": "Qwen2VLImageProcessor\nimage_processing_qwen2_vl.py:105\nInherits: BaseImageProcessor\n• smart_resize()\n• resize, rescale, normalize",
+      "text": "Qwen2VLImageProcessor\nimage_processing_qwen2_vl.py:105\nInherits: BaseImageProcessor\n\u2022 smart_resize()\n\u2022 resize, rescale, normalize",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "ImageProcessor"
+        "component": "ImageProcessor",
+        "fill": "#06b6d4",
+        "stroke": "#06b6d4"
       }
     },
     {
@@ -62,11 +70,13 @@
       "width": 250,
       "height": 100,
       "color": "5",
-      "text": "Qwen2TokenizerFast\n(external)\n• Tokenizes text\n• Handles special tokens",
+      "text": "Qwen2TokenizerFast\n(external)\n\u2022 Tokenizes text\n\u2022 Handles special tokens",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "Tokenizer"
+        "component": "Tokenizer",
+        "fill": "#06b6d4",
+        "stroke": "#06b6d4"
       }
     },
     {
@@ -77,11 +87,13 @@
       "width": 260,
       "height": 100,
       "color": "5",
-      "text": "Qwen2VLVideoProcessor\nvideo_processing_qwen2_vl.py\n• Frame extraction\n• Temporal processing",
+      "text": "Qwen2VLVideoProcessor\nvideo_processing_qwen2_vl.py\n\u2022 Frame extraction\n\u2022 Temporal processing",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "VideoProcessor"
+        "component": "VideoProcessor",
+        "fill": "#06b6d4",
+        "stroke": "#06b6d4"
       }
     },
     {
@@ -92,11 +104,13 @@
       "width": 250,
       "height": 120,
       "color": "3",
-      "text": "Qwen2VLConfig\nconfiguration_qwen2_vl.py:239\n• vision_config\n• text_config\n• token IDs",
+      "text": "Qwen2VLConfig\nconfiguration_qwen2_vl.py:239\n\u2022 vision_config\n\u2022 text_config\n\u2022 token IDs",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "Config"
+        "component": "Config",
+        "fill": "#fbbf24",
+        "stroke": "#fbbf24"
       }
     },
     {
@@ -107,11 +121,13 @@
       "width": 400,
       "height": 120,
       "color": "4",
-      "text": "Qwen2VLForConditionalGeneration\nmodeling_qwen2_vl.py:1263\nInherits: Qwen2VLPreTrainedModel, GenerationMixin\n• forward() - main entry point\n• lm_head - output projection",
+      "text": "Qwen2VLForConditionalGeneration\nmodeling_qwen2_vl.py:1263\nInherits: Qwen2VLPreTrainedModel, GenerationMixin\n\u2022 forward() - main entry point\n\u2022 lm_head - output projection",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "Model"
+        "component": "Model",
+        "fill": "#10b981",
+        "stroke": "#10b981"
       }
     },
     {
@@ -122,11 +138,13 @@
       "width": 400,
       "height": 120,
       "color": "4",
-      "text": "Qwen2VLModel\nmodeling_qwen2_vl.py:925\n• self.visual (vision encoder)\n• self.language_model (text decoder)\n• get_rope_index() - 3D position encoding",
+      "text": "Qwen2VLModel\nmodeling_qwen2_vl.py:925\n\u2022 self.visual (vision encoder)\n\u2022 self.language_model (text decoder)\n\u2022 get_rope_index() - 3D position encoding",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "Model"
+        "component": "Model",
+        "fill": "#10b981",
+        "stroke": "#10b981"
       }
     },
     {
@@ -137,11 +155,13 @@
       "width": 300,
       "height": 180,
       "color": "4",
-      "text": "Qwen2VisionTransformer\nmodeling_qwen2_vl.py:669\nInherits: Qwen2VLPreTrainedModel\n\n• PatchEmbed:257 - patch tokenization\n• VisionRotaryEmbedding:243\n• Qwen2VLVisionBlock:432 (×32)\n  - VisionAttention:349\n  - VisionMlp:299\n• PatchMerger:283 - spatial merge",
+      "text": "Qwen2VisionTransformer\nmodeling_qwen2_vl.py:669\nInherits: Qwen2VLPreTrainedModel\n\n\u2022 PatchEmbed:257 - patch tokenization\n\u2022 VisionRotaryEmbedding:243\n\u2022 Qwen2VLVisionBlock:432 (\u00d732)\n  - VisionAttention:349\n  - VisionMlp:299\n\u2022 PatchMerger:283 - spatial merge",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "VisionEncoder"
+        "component": "VisionEncoder",
+        "fill": "#10b981",
+        "stroke": "#10b981"
       }
     },
     {
@@ -152,11 +172,13 @@
       "width": 300,
       "height": 180,
       "color": "4",
-      "text": "Qwen2VLTextModel\nmodeling_qwen2_vl.py:768\nInherits: Qwen2VLPreTrainedModel\n\n• embed_tokens - embeddings\n• Qwen2VLDecoderLayer:570 (×80)\n  - Qwen2VLAttention:478 (GQA)\n  - Qwen2MLP:462 (SwiGLU)\n• Qwen2RMSNorm - normalization",
+      "text": "Qwen2VLTextModel\nmodeling_qwen2_vl.py:768\nInherits: Qwen2VLPreTrainedModel\n\n\u2022 embed_tokens - embeddings\n\u2022 Qwen2VLDecoderLayer:570 (\u00d780)\n  - Qwen2VLAttention:478 (GQA)\n  - Qwen2MLP:462 (SwiGLU)\n\u2022 Qwen2RMSNorm - normalization",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "LanguageModel"
+        "component": "LanguageModel",
+        "fill": "#10b981",
+        "stroke": "#10b981"
       }
     },
     {
@@ -167,11 +189,13 @@
       "width": 280,
       "height": 180,
       "color": "6",
-      "text": "Multimodal Fusion\nIn Qwen2VLModel\n\n• Vision embeddings merged\n• Text embeddings\n• Combined via position IDs\n• 3D RoPE for vision\n• 1D RoPE for text",
+      "text": "Multimodal Fusion\nIn Qwen2VLModel\n\n\u2022 Vision embeddings merged\n\u2022 Text embeddings\n\u2022 Combined via position IDs\n\u2022 3D RoPE for vision\n\u2022 1D RoPE for text",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "MultimodalProjector"
+        "component": "MultimodalProjector",
+        "fill": "#a855f7",
+        "stroke": "#a855f7"
       }
     },
     {
@@ -182,11 +206,13 @@
       "width": 260,
       "height": 120,
       "color": "6",
-      "text": "GenerationMixin\n(inherited)\n• generate()\n• beam search\n• sampling strategies",
+      "text": "GenerationMixin\n(inherited)\n\u2022 generate()\n\u2022 beam search\n\u2022 sampling strategies",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "GenerationMixin"
+        "component": "GenerationMixin",
+        "fill": "#a855f7",
+        "stroke": "#a855f7"
       }
     },
     {
@@ -197,11 +223,13 @@
       "width": 400,
       "height": 100,
       "color": "2",
-      "text": "Qwen2VLCausalLMOutputWithPast\nmodeling_qwen2_vl.py:86\n• logits, loss\n• past_key_values (KV cache)\n• rope_deltas",
+      "text": "Qwen2VLCausalLMOutputWithPast\nmodeling_qwen2_vl.py:86\n\u2022 logits, loss\n\u2022 past_key_values (KV cache)\n\u2022 rope_deltas",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "ModelOutput"
+        "component": "ModelOutput",
+        "fill": "#ff9800",
+        "stroke": "#ff9800"
       }
     },
     {
@@ -212,11 +240,13 @@
       "width": 250,
       "height": 100,
       "color": "1",
-      "text": "PreTrainedModel\n(transformers base)\n• from_pretrained()\n• save_pretrained()",
+      "text": "PreTrainedModel\n(transformers base)\n\u2022 from_pretrained()\n\u2022 save_pretrained()",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "PreTrainedModel"
+        "component": "PreTrainedModel",
+        "fill": "#ef4444",
+        "stroke": "#ef4444"
       }
     },
     {
@@ -227,11 +257,13 @@
       "width": 220,
       "height": 100,
       "color": "5",
-      "text": "image_utils.py\nimage_transforms.py\n• resize, rescale\n• normalize, pad\n• convert_to_rgb",
+      "text": "image_utils.py\nimage_transforms.py\n\u2022 resize, rescale\n\u2022 normalize, pad\n\u2022 convert_to_rgb",
       "vv": {
         "nodeType": "component",
         "shape": "rounded",
-        "component": "ImageTransform"
+        "component": "ImageTransform",
+        "fill": "#06b6d4",
+        "stroke": "#06b6d4"
       }
     }
   ],
@@ -242,7 +274,8 @@
       "toNode": "processor",
       "color": "5",
       "vv": {
-        "component": "processes"
+        "component": "processes",
+        "stroke": "#06b6d4"
       }
     },
     {
@@ -251,7 +284,8 @@
       "toNode": "image_processor",
       "color": "4",
       "vv": {
-        "component": "uses"
+        "component": "uses",
+        "stroke": "#10b981"
       }
     },
     {
@@ -260,7 +294,8 @@
       "toNode": "video_processor",
       "color": "4",
       "vv": {
-        "component": "uses"
+        "component": "uses",
+        "stroke": "#10b981"
       }
     },
     {
@@ -269,7 +304,8 @@
       "toNode": "tokenizer",
       "color": "4",
       "vv": {
-        "component": "uses"
+        "component": "uses",
+        "stroke": "#10b981"
       }
     },
     {
@@ -278,7 +314,8 @@
       "toNode": "image_utils",
       "color": "4",
       "vv": {
-        "component": "uses"
+        "component": "uses",
+        "stroke": "#10b981"
       }
     },
     {
@@ -287,7 +324,8 @@
       "toNode": "for_conditional_gen",
       "color": "5",
       "vv": {
-        "component": "processes"
+        "component": "processes",
+        "stroke": "#06b6d4"
       }
     },
     {
@@ -296,7 +334,8 @@
       "toNode": "qwen2vl_model",
       "color": "4",
       "vv": {
-        "component": "uses"
+        "component": "uses",
+        "stroke": "#10b981"
       }
     },
     {
@@ -305,7 +344,8 @@
       "toNode": "vision_transformer",
       "color": "4",
       "vv": {
-        "component": "uses"
+        "component": "uses",
+        "stroke": "#10b981"
       }
     },
     {
@@ -314,7 +354,8 @@
       "toNode": "text_model",
       "color": "4",
       "vv": {
-        "component": "uses"
+        "component": "uses",
+        "stroke": "#10b981"
       }
     },
     {
@@ -323,7 +364,8 @@
       "toNode": "multimodal_fusion",
       "color": "5",
       "vv": {
-        "component": "encodes"
+        "component": "encodes",
+        "stroke": "#06b6d4"
       }
     },
     {
@@ -332,7 +374,8 @@
       "toNode": "multimodal_fusion",
       "color": "5",
       "vv": {
-        "component": "encodes"
+        "component": "encodes",
+        "stroke": "#06b6d4"
       }
     },
     {
@@ -341,7 +384,8 @@
       "toNode": "model_output",
       "color": "5",
       "vv": {
-        "component": "generates"
+        "component": "generates",
+        "stroke": "#06b6d4"
       }
     },
     {
@@ -350,7 +394,8 @@
       "toNode": "generation_mixin",
       "color": "1",
       "vv": {
-        "component": "extends"
+        "component": "extends",
+        "stroke": "#ef4444"
       }
     },
     {
@@ -359,7 +404,8 @@
       "toNode": "pretrained_model",
       "color": "1",
       "vv": {
-        "component": "extends"
+        "component": "extends",
+        "stroke": "#ef4444"
       }
     },
     {
@@ -368,7 +414,8 @@
       "toNode": "for_conditional_gen",
       "color": "3",
       "vv": {
-        "component": "configures"
+        "component": "configures",
+        "stroke": "#fbbf24"
       }
     },
     {
@@ -377,7 +424,8 @@
       "toNode": "model_output",
       "color": "5",
       "vv": {
-        "component": "generates"
+        "component": "generates",
+        "stroke": "#06b6d4"
       }
     }
   ]
